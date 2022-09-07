@@ -33,3 +33,4 @@ C. Ementa
     
   - Linguagem de programação orientada a objetos
     
+![ccmn](http://portal.nce.ufrj.br/images/logo-ccmn-2021-neg-vertical.png)
