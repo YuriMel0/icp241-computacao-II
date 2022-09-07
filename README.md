@@ -13,23 +13,23 @@ B. Biografia recomendada
   
 C. Ementa
 
-    Conceitos do paradigma da programação orientada a objetos.
+  - Conceitos do paradigma da programação orientada a objetos
     
-    Abstração.
+  - Abstração
     
-    Introdução a classes e objetos.
+  - Introdução a classes e objetos
     
-    Agregação e Composição de objetos.
+  - Agregação e Composição de objetos
     
-    Encapsulamento.
+  - Encapsulamento
     
-    Herança.
+  - Herança
     
-    Polimorfismo.
+  - Polimorfismo
     
-    Tratamento de Exceções.
+  - Tratamento de Exceções
     
-    Projeto orientado a objetos.
+  - Projeto orientado a objetos
     
-    Linguagem de programação orientada a objetos.
+  - Linguagem de programação orientada a objetos
     
