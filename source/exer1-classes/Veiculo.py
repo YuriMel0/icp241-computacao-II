@@ -18,8 +18,8 @@ class Veiculo:
     __tanqueAtual = None
     __autonomiaKmL = None
     __kmRodados = None
+
     
-    #Metodo construtor
     def __init__(self,marca,modelo,dono,tanqueCapacid,tanqueAtual,autonomiaKmL,kmRodados):
         self.marca = marca
         self.modelo = modelo
@@ -29,20 +29,20 @@ class Veiculo:
         self.__autonomiaKmL = autonomiaKmL
         self.__kmRodados = kmRodados
 
-    #Metodos Get/Set
-    def getTanque():
+
+    def lerTanque():
         return self.__tanqueAtual
 
-    def getCapacid():
+    def lerTanqueCapacid():
         return self.__tanqueCapacid
 
-    def getAutonomia():
+    def lerAutonomia():
         return self.__autonomiaKmL
 
-    def getKmRodados():
+    def lerRodagem():
         return self.__kmRodados
 
-    def setAutonomia(novaAutonomia):
+    def alterarAutonomia(novaAutonomia):
         if __validarProp(novaAutonomia):
             self.__autonomiaKmL = novaAutonomia
             return True
