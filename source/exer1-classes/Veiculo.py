@@ -4,12 +4,13 @@
     
     Nome: Yuri Ferreira Melo
     DRE: 120081378
-    Última modificação: 13/09/22
+    Última modificação: 14/09/22
 """
+
+#v = Veiculo("Toyota", "SW4", "yuri", 65.5, 12.5, 6.5, 1000)
 
 class Veiculo:
 
-    #Atributos
     marca = None
     modelo = None
     dono = None
@@ -17,11 +18,11 @@ class Veiculo:
     __tanqueAtual = None
     __autonomiaKmL = None
     __kmRodados = None
-
+    
     #Metodo construtor
-    def __init__(self,marca,modelo,dono,__tanqueCapacid,__tanqueAtual,__autonomiaKmL,__kmRodados):
+    def __init__(self,marca,modelo,dono,tanqueCapacid,tanqueAtual,autonomiaKmL,kmRodados):
         self.marca = marca
-        self.modelo = mdelo
+        self.modelo = modelo
         self.dono = dono
         self.__tanqueCapacid = tanqueCapacid
         self.__tanqueAtual = tanqueAtual
@@ -53,6 +54,13 @@ class Veiculo:
             if self.__tanqueAtual + qtdLitros <= self.__tanqueCapacid:
                 self.__tanqueAtual += qtdlitros
                 return True
+        else:
+            return False
+
+    def fazerViagem(qdtKm):
+        if qdtKm / __autonomiaKmL <= __tanqueAtual:
+            __tanqueAtual -= __autonomiaKmL * qdtKm
+            __kmRodados += qdtKm
         else:
             return False
 
