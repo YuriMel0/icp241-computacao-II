@@ -2,12 +2,9 @@
     UFRJ - Universidade Federal do Rio de Janeiro
     ICP241 - Computação II
     
-    Nome: Yuri Ferreira Melo
-    DRE: 120081378
-    Última modificação: 14/09/22
+    Autor: Yuri Melo
+    Última modificação: 15/09/22
 """
-
-#v = Veiculo("Toyota", "SW4", "yuri", 65.5, 12.5, 6.5, 1000)
 
 class Veiculo:
 
@@ -30,45 +27,46 @@ class Veiculo:
         self.__kmRodados = kmRodados
 
 
-    def lerTanque():
+    def lerTanque(self):
         return self.__tanqueAtual
 
-    def lerTanqueCapacid():
+    def lerTanqueCapacid(self):
         return self.__tanqueCapacid
 
-    def lerAutonomia():
+    def lerAutonomia(self):
         return self.__autonomiaKmL
 
-    def lerRodagem():
+    def lerRodagem(self):
         return self.__kmRodados
 
-    def alterarAutonomia(novaAutonomia):
-        if __validarProp(novaAutonomia):
+    def alterarAutonomia(self, novaAutonomia):
+        if self.__validarProp(novaAutonomia):
             self.__autonomiaKmL = novaAutonomia
             return True
         else:
             return False
 
-    def abastecerTanque(qtdLitros):
-        if __validarProp(qtdLitros):
+    def abastecerTanque(self, qtdLitros):
+        if self.__validarProp(qtdLitros):
             if self.__tanqueAtual + qtdLitros <= self.__tanqueCapacid:
-                self.__tanqueAtual += qtdlitros
+                self.__tanqueAtual += qtdLitros
                 return True
         else:
             return False
 
-    def fazerViagem(qdtKm):
-        if qdtKm / __autonomiaKmL <= __tanqueAtual:
-            __tanqueAtual -= __autonomiaKmL * qdtKm
-            __kmRodados += qdtKm
+    def fazerViagem(self, qdtKm):
+        if qdtKm / self.__autonomiaKmL <= self.__tanqueAtual:
+            self.__tanqueAtual = ((self.__autonomiaKmL * self.__tanqueAtual) - qdtKm) / self.__autonomiaKmL  
+            self.__kmRodados += qdtKm
         else:
             return False
 
-    def __validarProp(novoValor):
+    def __validarProp(self, novoValor):
         if novoValor > 0:
             return True
         else:
             return False
-        
-        
+
+#teste
+#v1 = Veiculo("Toyota", "SW4", "teste", 80.5, 10, 5, 2000)
     
