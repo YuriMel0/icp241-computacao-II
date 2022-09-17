@@ -1,6 +1,6 @@
 ![minerva](https://ufrj.br/wp-content/uploads/2022/01/marca-ufrj-horizontal-completa-positiva.png)
 
-## ICP241 - Computação II
+## ICP241 - Computação II - 2022.2
 ![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
 
 A. Motivação e Objetivo
