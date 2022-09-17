@@ -3,7 +3,7 @@
     ICP241 - Computação II
     
     Autor: Yuri Melo
-    Última modificação: 15/09/22
+    Última modificação: 17/09/22
 """
 
 class Veiculo:
@@ -58,6 +58,7 @@ class Veiculo:
         if qdtKm / self.__autonomiaKmL <= self.__tanqueAtual:
             self.__tanqueAtual = ((self.__autonomiaKmL * self.__tanqueAtual) - qdtKm) / self.__autonomiaKmL  
             self.__kmRodados += qdtKm
+            return True
         else:
             return False
 
