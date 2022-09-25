@@ -2,7 +2,8 @@
     UFRJ - universidade Federal do Rio de Janeiro
     ICP241 - Computação II
 
-    Autor: Yuri Melo
+    Autor: Yuri Ferreira Melo
+    DRE: 120081378
 """
 
 class Pilha:
@@ -20,10 +21,10 @@ class Pilha:
     def empilhar(self, novoElemento):
         """
             Método para empilhar um número na estrutura:
-            int -> list
+            int -> bool
         """
         self.pilha.append(novoElemento)
-        return self.pilha
+        return True
 
 
     def desempilhar(self):
