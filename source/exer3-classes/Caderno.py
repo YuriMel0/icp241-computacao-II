@@ -10,22 +10,20 @@ class Caderno:
 
     def __init__(self):
         """
-            void -> void
-
             Método construtor, não recebe nemhum parametro,
             também não tem retorno explicito
         """
         self.caderno = []
 
 
-    def novaFolha(self, novaFolha):
+    def novaFolha(self):
         """
-            (list, str) -> str
+            void -> str
 
             Adiciona uma nova folha no caderno, retorna
             uma estring indicando se foi adicionada corretamente
         """
-        self.caderno.append(novaFolha)
+        self.caderno.append([])
         return print("Folha adicionada com sucesso!")
 
 
@@ -39,14 +37,30 @@ class Caderno:
         return self.caderno.pop()
 
 
-    def escrever(self, conteudo):
+    def escrever(self, conteudo, numFolha):
         """
-            str -> void
+            str, int -> void
 
             Escreve uma linha de conteúdo na última folha do caderno 
         """
-        self.caderno[-1].append(conteudo)
+        return self.caderno[numFolha-1].append(conteudo)
         
 
-    def getCaderno(self):
-        return self.caderno
+    def imprimir(self):
+        for folha in range(len(self.caderno)):
+            for linha in self.caderno[folha]:
+                print(linha)
+            print(folha+1)
+
+    
+  import time
+
+
+  class Diario(Caderno):
+    def __init__(self):
+        Caderno.__init__(self)
+
+
+    def novaFolha(self):
+        return self.caderno.append([time.ctime()])
+        
