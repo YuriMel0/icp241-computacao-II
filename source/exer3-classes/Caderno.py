@@ -14,6 +14,7 @@ class Caderno:
             também não tem retorno explicito
         """
         self.caderno = []
+        self.totalPaginas = 0 #Não especificaram qual seria o uso do metodo
 
 
     def novaFolha(self):
@@ -37,30 +38,45 @@ class Caderno:
         return self.caderno.pop()
 
 
-    def escrever(self, conteudo, numFolha):
+    def escrever(self, conteudo, numeroFolha):
         """
             str, int -> void
 
             Escreve uma linha de conteúdo na última folha do caderno 
         """
-        return self.caderno[numFolha-1].append(conteudo)
+        return self.caderno[numeroFolha-1].append(conteudo)
         
 
     def imprimir(self):
+        """
+            void -> str
+
+            Imprime todas as folhas do caderno e suas respectivas numerações
+        """
         for folha in range(len(self.caderno)):
             for linha in self.caderno[folha]:
                 print(linha)
             print(folha+1)
-
+            print()
+            
     
-  import time
+import time
 
 
-  class Diario(Caderno):
+class Diario(Caderno):
     def __init__(self):
+        """
+            Método construtor, não recebe nemhum parametro,
+            também não tem retorno explicito
+        """
         Caderno.__init__(self)
 
 
     def novaFolha(self):
+        """
+            void -> list
+
+            cria uma nova folha no diario com a data e dia atual
+        """
         return self.caderno.append([time.ctime()])
         
