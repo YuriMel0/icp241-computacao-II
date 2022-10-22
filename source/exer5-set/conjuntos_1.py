@@ -67,11 +67,36 @@ def questao4():
     print(numerosFinal)
 
 
+#questão 5
+def explicadora(alunosCalc, alunosFis):
+    """
+        Recebe duas listas, alunos que fazem calculo e alunos que fazem fisica e
+        retorna o total de alunos, alunos que fazem calculo e fisica e os alunos que
+        fazem calculo ou fisica
+    """
+    
+    alunosCalc = set(alunosCalc)
+    alunosFis = set(alunosFis)
+
+    totalAlunos = alunosCalc.union(alunosFis)
+    alunosCalcFis = alunosCalc.intersection(alunosFis)
+    alunosCalcOuFis = alunosCalc.symmetric_difference(alunosFis)
+
+    print(f"Total de alunos: {len (totalAlunos)}")
+    print(f"Alunos que fazem calculo e fisica: {alunosCalcFis}")
+    print(f"Total de alunos que fazem calculo ou fisica: {len (alunosCalcOuFis)}")
+    
+    
+
+    
+
 def main():
     #print(festa(["João", "Maria", "Laura", "Julia", "Pedro"], ["João", "Maria", "Laura", "Julia", "Pedro", "Claudia"]))
     #print(funcionarios(["Wade Wilson","Nick Fury","Steve Rorges","Tony Stark","Clark Kent","Bruce Wayne"], ["Nathasha Romanov","Wanda","Peper Pots"], ["Bruce Wayne","Tony Stark","Nick Fury"]))
     #print(mercearia(["Pão","Queijo","Leite","Laranja"], ["Laranja","Nutela","Chocolate"]))
-    questao4()
+    #questao4()
+    explicadora(["João", "Maria", "Laura", "Julia", "Pedro"],["Maria", "Laura", "Julia", "Pedro", "Claudia"])
+    
     
 
 if __name__ == "__main__":
