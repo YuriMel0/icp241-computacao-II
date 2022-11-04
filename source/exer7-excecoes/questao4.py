@@ -73,9 +73,10 @@ class Pessoa:
             
 
 
-
-
 class Notas:
+    """ 
+        Classe Notas, questão 4
+    """
 
     def __init__(self: None) -> None:
         self.nota1 = None
@@ -83,7 +84,7 @@ class Notas:
         self.nota3 = None
 
     def getNota1(self):
-        return nota1
+        return self.nota1
 
     def setNota1(self, nota1: int) -> None:
         if nota1 >= 0 and nota1 <= 10:
@@ -92,7 +93,7 @@ class Notas:
             raise ValueError("nota invalida")
 
     def getNota2(self):
-        return nota2
+        return self.nota2
 
     def setNota2(self, nota2: int) -> None:
         if nota2 >= 0 and nota2 <= 10:
@@ -101,7 +102,7 @@ class Notas:
             raise ValueError("nota invalida")
 
     def getNota3(self):
-        return nota3
+        return self.nota3
 
     def setNota3(self, nota3: int) -> None:
         if nota3 >= 0 and nota3 <= 10:
@@ -115,3 +116,56 @@ class Notas:
 
 
 
+class Aluno(Pessoa):
+    """
+        Classe Aluno, questão 4
+    """
+
+    def __init__(self, nome: str, cpf: str) -> None:
+        super().__init__(nome, cpf)
+        self.numero_matricula = None
+        self.nota_aluno = Notas()
+
+
+    def getMatricula(self):
+        return self.numero_matricula
+    
+    def setNumeroMatricula(self, nova_matricula: int) -> None:
+        self.numero_matricula = nova_matricula
+
+    def visualizarMedia(self):
+        return self.nota_aluno.calcularMedia()
+        
+
+
+
+class Professor(Pessoa):
+    """
+        Classe Professor, questão 4
+    """
+
+    def __init__(self, nome: str, cpf: str) -> None:
+        super().__init__(nome, cpf)
+        self.salario = None
+
+    def setSalario(self, salario: bool) -> None:
+        self.salario = salario
+    
+    def mostrarSalario(self) -> bool:
+        return self.salario
+
+
+
+class ProfessorHorista(Professor):
+    """
+        Classe Professor horista, questão 4
+    """
+    
+    def __init__(self, nome: str, cpf: str, salario: bool, horas_de_aula: int, valor_hora: bool) -> None:
+        super().__init__(nome, cpf, salario)
+        self.horas_de_aula = horas_de_aula
+        self.valor_hora = valor_hora
+
+    def calcularSalario(self):
+        return self.horas_de_aula * self.valor_hora
+        
