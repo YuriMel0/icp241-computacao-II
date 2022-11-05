@@ -18,7 +18,6 @@ class Pessoa:
             return True
         else:
             raise ValueError("nome invalido")
-            return False
 
     def getCelular(self):
         return self.celular
@@ -27,7 +26,6 @@ class Pessoa:
         novo_celular = str(novo_celular)
         if len (novo_celular) < 8:
             raise ValueError("celular invalido")
-            return False
         else:
             self.celular = novo_celular
             return True
@@ -39,7 +37,6 @@ class Pessoa:
         novo_telefone = str(novo_telefone)
         if len (novo_telefone) < 8:
             raise ValueError("telefone invalido")
-            return False
         else:
             self.telefone = novo_telefone
             return True
@@ -52,5 +49,4 @@ class Pessoa:
             self.email = novo_email
             return True
         else:
-            raise ValueError("email invalido")
-            return False                           
+            raise ValueError("email invalido")                       
