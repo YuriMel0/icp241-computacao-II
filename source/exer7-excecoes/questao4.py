@@ -86,7 +86,7 @@ class Notas:
     def getNota1(self):
         return self.nota1
 
-    def setNota1(self, nota1: int) -> None:
+    def setNota1(self, nota1: bool) -> None:
         if nota1 >= 0 and nota1 <= 10:
             self.nota1 = nota1
         else:
@@ -95,7 +95,7 @@ class Notas:
     def getNota2(self):
         return self.nota2
 
-    def setNota2(self, nota2: int) -> None:
+    def setNota2(self, nota2: bool) -> None:
         if nota2 >= 0 and nota2 <= 10:
             self.nota2 = nota2
         else:
@@ -104,7 +104,7 @@ class Notas:
     def getNota3(self):
         return self.nota3
 
-    def setNota3(self, nota3: int) -> None:
+    def setNota3(self, nota3: bool) -> None:
         if nota3 >= 0 and nota3 <= 10:
             self.nota3 = nota3
         else:
@@ -169,3 +169,19 @@ class ProfessorHorista(Professor):
     def calcularSalario(self):
         return self.horas_de_aula * self.valor_hora
         
+    
+
+class Controller():
+    """
+        Classe Controller, questão 4
+    """
+    def __init__(self) -> None:
+        self.lista_alunos = []
+        self.lista_professores = []
+
+    def adicionarProfessor(self, Professor: Professor) -> None:
+        self.lista_professores.append(Professor)
+
+    def adicionarAluno(self, Aluno: Aluno) -> None:
+        self.lista_alunos.append(Aluno)
+            
