@@ -168,20 +168,5 @@ class ProfessorHorista(Professor):
 
     def calcularSalario(self):
         return self.horas_de_aula * self.valor_hora
-        
     
-
-class Controller():
-    """
-        Classe Controller, questão 4
-    """
-    def __init__(self) -> None:
-        self.lista_alunos = []
-        self.lista_professores = []
-
-    def adicionarProfessor(self, Professor: Professor) -> None:
-        self.lista_professores.append(Professor)
-
-    def adicionarAluno(self, Aluno: Aluno) -> None:
-        self.lista_alunos.append(Aluno)
             
