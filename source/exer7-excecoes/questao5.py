@@ -28,9 +28,12 @@ class Produto:
             self.preco = preco
 
     def armazenaNoArquivo(self) -> None:
+        codigo = int(self.codigo)
+        descricao = str(self.descricao)
+        preco = float(self.preco)
         try:
             produtos = open("produtos.txt", "a")
-            produtos.write(self.codigo + ";" + self.descricao + ";" + self.preco + "\n")
+            produtos.write(codigo + ";" + descricao + ";" + preco + "\n")
             produtos.close()
 
         except:
@@ -45,17 +48,50 @@ class Manipula:
         Classe para manipular conteudo de arquivos txt
     """
 
-    def leProdutosAcimaValor(nome_produto: str, valor_produto: float) -> Produto:
+    def leProdutosAcimaValor(nome_arquivo: str, valor_produto: float) -> Produto:
+        valores_maiores = []
         try:
-            produtos = open("produtos.txt", "r")
+            produtos = open(f"{nome_arquivo}.txt", "r")
             for linha in produtos:
-                linha = linha.rstrip()
-                produtos.readlines()
+                produto = linha.split(";")
+                if produto[2] > valor_produto:
+                    valores_maiores.append(produto[2])
             produtos.close()
-
+            
+            return valores_maiores
         except:
             raise IOError("Arquivo não foi encontrado ou não existe")
 
         finally:
             return "O programa foi encerrado"
 
+    
+    def buscaPreco(nome_arquivo: str, codigo_produto: float) -> Produto:
+        nome_arquivo = str(nome_arquivo)
+        try:
+            produtos = open(f"{nome_arquivo}.txt", "r")
+            for linha in produtos:
+                produto = linha.split(";")
+                if produto[0] == codigo_produto:
+                    print(produto[2])
+            produtos.close()
+        except:
+            raise IOError("Arquivo não foi encontrado ou não existe")
+
+        finally:
+            return "O programa foi encerrado"
+
+
+def main():
+    p = Produto()
+
+    p.cadastrarProduto(12345,"Notebook",1999.99)
+    p.armazenaNoArquivo()
+
+
+    manipulacao = Manipula()
+    manipulacao.buscaPreco(12345)
+
+
+if __name__ == '__main__':
+    main()
